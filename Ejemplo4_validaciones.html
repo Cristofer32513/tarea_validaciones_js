@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULARIO DE REGISTRO</title>
+    <script src="scripts/validacion_registro.js"></script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>FORMULARIO DE REGISTRO</legend>
+        <form action="" method="POST" onsubmit="return validarFormulario()">
+            <label for="">Numero de Control:</label>
+            <input type="text" id="caja_num_control" name="caja_num_control" size="10" maxlength="8"
+                onkeyup="return validacionNumero(this);">
+            <span id="msj_num_control"> </span>
+            <br><br>
+            <label for="">Nombre:</label>
+            <input type="text" id="caja_nombre" name="caja_nombre" size="10" placeholder="Solo Letras" maxlength="10">
+            <span id="msj_nombre"> </span>
+            <br><br>
+            <label for="">Primer Apellido:</label>
+            <input type="text" id="caja_primer_ap" name="caja_primer_ap" maxlength="10" size="10">
+            <span id="msj_primer_ap"> </span>
+            <br><br>
+            <label for="">Segundo Apellido:</label>
+            <input type="text" id="caja_segundo_ap" name="caja_segundo_ap" maxlength="10" size="10">
+            <span id="msj_segundo_ap"> </span>
+            <br><br>
+            <label for="">Edad:</label>
+            <select name="select_edad" id="select_edad">
+                <option value="">Elige Opción...</option>
+                <optgroup label="Niña/o">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">...</option>
+                </optgroup>
+            </select>
+            <span id="msj_edad"> </span>
+            <br><br>
+            <label for="">Carrera:</label>
+            <label for="radio_isc">
+                <input class="rb" type="radio" id="radio_isc" name="radio_carrera" value="ISC" checked /> Ingenieria en Sistemas
+                Computacionales
+            </label>
+            <label for="radio_im">
+                <input class="rb" type="radio" id="radio_im" name="radio_carrera" value="IM" /> IM
+            </label>
+            <label for="radio_ia">
+                <input class="rb" type="radio" id="radio_ia" name="radio_carrera" value="IA" /> IA
+            </label>
+            <label for="radio_cp">
+                <input class="rb" type="radio" id="radio_cp" name="radio_carrera" value="CP" /> CP
+            </label>
+            <label for="radio_la">
+                <input class="rb" type="radio" id="radio_la" name="radio_carrera" value="LA" /> LA
+            </label>
+            <span id="msj_carrera"> </span>
+            <br><br>
+            <label for="caja_semestre">Semestre:</label>
+            <input type="number" id="caja_semestre" name="caja_semestre" value="10" pattern="\d*">
+            <span id="msj_semestre"> </span>
+            <br><br>
+            <label for="">Especialidades de Interes:</label>
+            <label for="checkbox_DEVOPS">
+                <input class="checks" type="checkbox" name="checkbox_DEVOPS" id="checkbox_DEVOPS" value="DEVOPS"> DevOps
+            </label>
+            <label for="checkbox_CD">
+                <input class="checks" type="checkbox" name="checkbox_CD" id="checkbox_CD" value="CD"> Ciencia de Datos
+            </label>
+            <label for="checkbox_ML">
+                <input class="checks" type="checkbox" name="checkbox_ML" id="checkbox_ML" value="ML"> Machine Learning
+            </label>
+            <span id="msj_especialidad"> </span>
+            <br><br>
+
+            <hr>
+            <label for="checkbox_comprobante">
+                <input type="checkbox" name="checkbox_comprobante" id="checkbox_comprobante" value="comprobante"
+                    onclick="mostrar_ocultar();"> Cuenta con comprobante de pago?
+            </label>
+            <br>
+            <div style="display: none;" id="comp">
+                <br>
+                <label for="">Agregar comprobante de pago:</label>
+                <input type="file">
+                <br>
+            </div>
+            <hr>
+
+
+            <br>
+            <input type="button" value="LIMPIAR">
+            <input type="submit" value="INSCRIBIR">
+            <br>
+        </form>
+    </fieldset>
+
+
+
+    <script>
+        const comprobante = document.getElementById("checkbox_comprobante");
+        comprobante.addEventListener("click", function (event) {
+            //alert("si jala");
+        });
+    </script>
+</body>
+
+</html>
